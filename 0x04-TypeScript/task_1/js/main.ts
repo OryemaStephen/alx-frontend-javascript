@@ -11,6 +11,10 @@ interface Directors extends Teacher{
   numberOfReports:number
 }
 
+interface printTeacherFunction {
+    (firstName: string, lastName: string): string;
+}
+
 // Examples
 const teacher1: Teacher={
    firstName: "Stephen",
@@ -44,7 +48,7 @@ const director1: Directors = {
   numberOfReports: 17,
 };
 
-
-console.log(director1);
-console.log(teacher1);
-console.log(teacher2);
+const printTeacher: printTeacherFunction = (firstName:string, lastName:string): string =>{
+  const firstLetter = firstName[0];
+  return `${firstLetter}. ${lastName}`;
+}
